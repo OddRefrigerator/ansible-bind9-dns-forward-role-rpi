@@ -1,0 +1,50 @@
+---
+- name: Install bind9 on raspberry Pi
+  hosts: localhost
+  any_errors_fatal: true
+  remote_user: root
+  become: yes
+  become_method: su
+  tasks:  
+  - name: Set hostname
+    hostname: 
+      name: ns2.home.com
+  - name: Update & upgrade all packages to the latest version
+    apt:
+      upgrade: yes
+      update_cache: yes
+      force_apt_get: yes #Needed for Raspbian(buster) 
+      cache_valid_time: 86400 #One day
+  - name: Install bind9
+    apt:
+      pkg: 
+      - bind9
+      - dnsutils
+      - python3-dnspython
+  - name: Copy file named.conf.local with owner and permissions
+    copy:
+      src: config/named.conf.local
+      dest: /etc/bind/named.conf.local
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Copy file named.conf.options with owner and permissions
+    copy:
+      src: config/named.conf.options
+      dest: /etc/bind/named.conf.options
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Copy host file with owner and permissions
+    copy:
+      src: config/home.com.hosts
+      dest: /var/lib/bind/home.com.hosts
+      owner: root
+      group: root
+      mode: '0644'
+  - name: restart bind9 to read new hosts file
+    service:
+      name: bind9
+      state: restarted
+  - name: DNS check srv1.home.com 
+    debug: msg="{{ lookup('dig', 'srv1.home.com.')}}"
