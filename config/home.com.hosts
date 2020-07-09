@@ -10,24 +10,24 @@ $TTL	86400
 ;
 ; DNS BIND9 server(s)
            NS    ns1.home.com. 
-ns1        A     192.168.1.9
+ns1        A     192.168.0.9
 ;
 ; Kerberose 5 server
-kdc                    A               192.168.1.10;B8-27-EB-D3-2E-82
+kdc                    A               192.168.0.10;B8-27-EB-D3-2E-82
 _kerberos              TXT             home.com
 ;
 ; Network clients with DHCP reservations
-router                 A               192.168.1.1 ;
-srv1                   A               192.168.1.2 ;74-D4-35-A6-78-9C
-xbox                   A               192.168.1.3 ;30-59-B7-4C-EA-83
-steve-phone            A               192.168.1.4 ;B4-F1-DA-E9-B2-0A
-steve-tablet           A               192.168.1.5 ;14-32-D1-66-EC-3D
-steve-ipad             A               192.168.1.6 ;D8-A2-5E-21-04-E3
-steve-laptop           A               192.168.1.7 ;3C-A0-67-79-C4-5B
-steve-oldlaptop        A               192.168.1.8 ;20-16-D8-D6-3D-2F
-Raspberrypi2           A               192.168.1.9 ;B8-27-EB-29-EB-1E
-raspberrypi3           A               192.168.1.10;B8-27-EB-D3-2E-82
-sonytv                 A               192.168.1.11;28-3A-4D-24-6E-9B
+router                 A               192.168.0.1 ;
+srv1                   A               192.168.0.2 ;74-D4-35-A6-78-9C
+xbox                   A               192.168.0.3 ;30-59-B7-4C-EA-83
+steve-phone            A               192.168.0.4 ;B4-F1-DA-E9-B2-0A
+steve-tablet           A               192.168.0.5 ;14-32-D1-66-EC-3D
+steve-ipad             A               192.168.0.6 ;D8-A2-5E-21-04-E3
+steve-laptop           A               192.168.0.7 ;3C-A0-67-79-C4-5B
+steve-oldlaptop        A               192.168.0.8 ;20-16-D8-D6-3D-2F
+Raspberrypi2           A               192.168.0.9 ;B8-27-EB-29-EB-1E
+raspberrypi3           A               192.168.0.10;B8-27-EB-D3-2E-82
+sonytv                 A               192.168.0.11;28-3A-4D-24-6E-9B
 ;
 ; Server web app services
 www                    CNAME   ns1.home.com.
