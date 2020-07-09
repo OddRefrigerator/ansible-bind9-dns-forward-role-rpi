@@ -8,5 +8,5 @@
 
 zone "home.com" {
 	type master;
-	file "/var/lib/bind/home.com.hosts";
+	file "/var/lib/bind/home.local.hosts";
 	};
