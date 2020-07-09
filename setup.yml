@@ -37,8 +37,8 @@
       mode: '0644'
   - name: Copy host file with owner and permissions
     copy:
-      src: config/home.com.hosts
-      dest: /var/lib/bind/home.com.hosts
+      src: config/home.local.hosts
+      dest: /var/lib/bind/home.local.hosts
       owner: root
       group: root
       mode: '0644'
@@ -46,5 +46,5 @@
     service:
       name: bind9
       state: restarted
-  - name: DNS check srv1.home.com 
-    debug: msg="{{ lookup('dig', 'srv1.home.com.')}}"
+  - name: DNS check srv1.home.local 
+    debug: msg="{{ lookup('dig', 'srv1.home.local.')}}"
