@@ -8,7 +8,7 @@
   tasks:  
   - name: Set hostname
     hostname: 
-      name: ns2.home.com
+      name: ns1.home.local
   - name: Update & upgrade all packages to the latest version
     apt:
       upgrade: yes
