@@ -10,20 +10,16 @@ options {
         allow-query-cache { localhost; local-net; };
         auth-nxdomain no; 
         dnssec-enable yes;
-        dnssec-validation yes; 
+        dnssec-validation auto; 
         listen-on-v6 { any; };
+        notify no;
+        version none;
         forwarders { 
+                8.8.4.4;
+                8.8.8.8;
                 209.197.128.2;
                 209.197.128.5;
-                8.8.8.8;
-                8.8.4.4;
-                1.1.1.1;
                 1.0.0.1;
-                208.67.222.222;
-                208.67.220.220;
-                64.6.64.6;
-                64.6.65.6;
-                199.85.126.10;
-                199.85.127.10;
+                1.1.1.1;
         };
 };

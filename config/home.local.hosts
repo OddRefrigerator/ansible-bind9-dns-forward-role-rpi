@@ -1,7 +1,7 @@
 $ORIGIN home.local.
 $TTL	86400 
 @	SOA	ns1.home.local.	hostmaster.home.local. (
-		20200709   ; serial
+		20200710   ; serial
 		21600      ; refresh after 6 hours
 		3600       ; retry after 1 hour
 		604800     ; expire after 1 week
