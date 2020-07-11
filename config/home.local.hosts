@@ -26,9 +26,13 @@ phone5GHZ              A               192.168.1.7 ;
 laptop                 A               192.168.1.8 ;
 tablet                 A               192.168.1.9 ;
 ipad                   A               192.168.1.10 ;
-tv                     A               192.168.1.11 ;
+sonytv                 A               192.168.1.11 ;
 ;
-; Server web app services
+; stubs for RHCE practice servers
 www                    CNAME   ns1.home.local.
 mysql                  CNAME   ns1.home.local.
+mariadb                CNAME   ns1.home.local.
+ntp                    CNAME   rpi3.home.local.
+smb                    CNAME   rpi3.home.local.
+nfs                    CNAME   rpi3.home.local.
 ;
