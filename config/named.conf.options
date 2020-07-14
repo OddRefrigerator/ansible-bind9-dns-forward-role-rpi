@@ -8,17 +8,15 @@ options {
         allow-query { localhost; local-net; };
         allow-recursion { localhost; local-net; };
         allow-query-cache { localhost; local-net; };
-        auth-nxdomain no; 
+        auth-nxdomain no;
         dnssec-enable yes;
-        dnssec-validation auto; 
+        dnssec-validation yes;
         listen-on-v6 { any; };
         notify no;
         version none;
-        forwarders { 
+        forwarders {
                 8.8.4.4;
                 8.8.8.8;
-                209.197.128.2;
-                209.197.128.5;
                 1.0.0.1;
                 1.1.1.1;
         };
