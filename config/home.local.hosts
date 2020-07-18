@@ -1,12 +1,11 @@
 $ORIGIN home.local.
 $TTL	86400 
 @	SOA	ns1.home.local.	hostmaster.home.local. (
-		20200710   ; serial
+		20200718   ; serial
 		21600      ; refresh after 6 hours
 		3600       ; retry after 1 hour
 		604800     ; expire after 1 week
 		86400 )    ; minimum TTL of 1 day
-;
 ;
 ; DNS BIND9 server(s)
            NS    ns1.home.local. 
@@ -29,10 +28,11 @@ ipad                   A               192.168.1.10 ;
 sonytv                 A               192.168.1.11 ;
 ;
 ; stubs for RHCE practice servers
-www                    CNAME   ns1.home.local.
-mysql                  CNAME   ns1.home.local.
-mariadb                CNAME   ns1.home.local.
-ntp                    CNAME   rpi3.home.local.
-smb                    CNAME   rpi3.home.local.
-nfs                    CNAME   rpi3.home.local.
+www                    CNAME   ns1.home.local.  ; Apache
+mariadb                CNAME   ns1.home.local.  ; mariadb primary source
+ntp                    CNAME   rpi3.home.local. ; ntp server
+smb                    CNAME   rpi3.home.local. ; samba file share
+nfs                    CNAME   rpi3.home.local. ; nfs file share
+mariadbrep             CNAME   rpi3.home.local. ; mariadb replication DB
+nginx                  CNAME   rpi3.home.local. ; nginx
 ;
